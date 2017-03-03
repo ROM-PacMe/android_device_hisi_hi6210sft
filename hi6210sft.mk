@@ -172,6 +172,8 @@ PRODUCT_COPY_FILES += \
 
 # Huawei P8 Lite Components
 PRODUCT_PACKAGES += \
+     	dlopener \
+     	hwchelper \
 	libhi6210sft \
 	lights.hi6210sft \
 	sound_trigger.primary.hi6210sft \
@@ -328,6 +330,31 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/vendor/lib64/libcalmodule_akm.so:system/vendor/lib64/libcalmodule_akm.so \
+
+# Wifi
+PRODUCT_PACKAGES += \
+     	libwpa_client \
+     	wpa_supplicant \
+     	wpa_supplicant-conf \
+
+PRODUCT_COPY_FILES += \
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/wifi,system/etc/wifi) \
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/lib/libchrlog.so:system/lib/libchrlog.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libhisi_ini.so:system/lib/libhisi_ini.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libwifi_factory_test.so:system/lib/libwifi_factory_test.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libwifi_factory_test_hi110x.so:system/lib/libwifi_factory_test_hi110x.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libwifipro.so:system/lib/libwifipro.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libwpa_client_hisi.so:system/lib/libwpa_client_hisi.so \
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/lib64/libchrlog.so:system/lib64/libchrlog.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libhisi_ini.so:system/lib64/libhisi_ini.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libwifi_factory_test.so:system/lib64/libwifi_factory_test.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libwifi_factory_test_hi110x.so:system/lib64/libwifi_factory_test_hi110x.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libwifipro.so:system/lib64/libwifipro.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libwpa_client_hisi.so:system/lib64/libwpa_client_hisi.so \
 
 # Zygote
 ADDITIONAL_DEFAULT_PROPERTIES += \
