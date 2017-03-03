@@ -169,6 +169,7 @@ PRODUCT_COPY_FILES += \
 # Huawei P8 Lite Components
 PRODUCT_PACKAGES += \
 	lights.hi6210sft \
+	power.hi6210sft \
 	sound_trigger.primary.hi6210sft \
 
 # Kernel
