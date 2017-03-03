@@ -85,6 +85,9 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := squashfs
 endif
 endif
 
+# Properties
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+
 # Recovery
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
