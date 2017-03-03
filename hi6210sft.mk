@@ -85,6 +85,27 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/bluetooth,system/etc/bluetooth) \
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.camera.beauty.algo.doc=1 \
+	ro.hwcamera.previeweffects=true \
+	ro.mmi.support_camera_otp=true \
+	ro.mmi.support_slave_camera_otp=true
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/etc/camera_orientation.cfg:system/etc/camera_orientation.cfg \
+	$(LOCAL_PATH)/rootdir/system/etc/camera_resolutions.cfg:system/etc/etc/camera_resolutions.cfg
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/lib/hw/camera.hi6210sft.so:system/lib/hw/camera.hi6210sft.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libcamera_core.so:system/lib/libcamera_core.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libCameraHwExtend.so:system/lib/libCameraHwExtend.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libjpegenchw.so:system/lib/libjpegenchw.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libjpu.so:system/lib/libjpu.so \
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/lib64/hw/camera.hi6210sft.so:system/lib64/hw/camera.hi6210sft.so \
+
 # Dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -172,9 +193,6 @@ PRODUCT_COPY_FILES += \
 
 # Huawei P8 Lite Components
 PRODUCT_PACKAGES += \
-     	dlopener \
-     	hwchelper \
-	libhi6210sft \
 	lights.hi6210sft \
 	sound_trigger.primary.hi6210sft \
 
