@@ -22,7 +22,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a7
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := ALE-L21,cherry,cherryk,CherryPlus,chm-u01,CHM-U01,hi6210sft,hwChe2,Che2-L11
+TARGET_OTA_ASSERT_DEVICE := ALE-L21,cherry,cherryk,CherryPlus,chm-u01,CHM-TL00H,CHM-U01,hi6210sft,hwChe2,Che2-L11
 
 # Audio
 BOARD_USES_ALSA_AUDIO := false
