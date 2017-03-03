@@ -281,7 +281,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/lib64/lib_atprotocolsw.so:system/lib64/lib_atprotocolsw.so \
-	$(LOCAL_PATH)/rootdir/system/lib64/libbalong-ril.so:system/ib64/libbalong-ril.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libbalong-ril.so:system/lib64/libbalong-ril.so \
 	$(LOCAL_PATH)/rootdir/system/lib64/libbalong-ril-1.so:system/lib64/libbalong-ril-1.so \
 	$(LOCAL_PATH)/rootdir/system/lib64/libconn_factory_test.so:system/lib64/libconn_factory_test.so \
 	$(LOCAL_PATH)/rootdir/system/lib64/libhisi_efuse.so:system/lib64/libhisi_efuse.so \
