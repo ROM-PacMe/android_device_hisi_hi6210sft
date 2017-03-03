@@ -259,13 +259,25 @@ PRODUCT_COPY_FILES += \
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
      	audioril.lib=libhuawei-audio-ril.so \
+
+PRODUCT_PROPERTY_OVERRIDES += \
 	gsm.fastdormancy.mode=3 \
+
+PRODUCT_PROPERTY_OVERRIDES += \
 	keyguard.no_require_sim=true \
+
+PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.apm_sim_not_pwdn=1 \
+
+PRODUCT_PROPERTY_OVERRIDES += \
 	ril.hw_modem0.rssi=-1 \
 	ril.hw_modem1.rssi=-1 \
+
+PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.hw_sim2airplane=true \
 	ro.dual.sim.phone=false \
+
+PRODUCT_PROPERTY_OVERRIDES += \
      	ro.telephony.ril_class=HwHisiRIL
 
 PRODUCT_COPY_FILES += \
