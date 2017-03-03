@@ -1,9 +1,3 @@
-# Camera
-ro.camera.beauty.algo.doc=1
-ro.hwcamera.previeweffects=true
-ro.mmi.support_camera_otp=true
-ro.mmi.support_slave_camera_otp=true
-
 # Display
 hw.lcd.lcd_density=320
 ro.sf.lcd_density=320
@@ -18,12 +12,8 @@ ro.opengles.version=131072
 qemu.hw.mainkeys=0
 
 # RIL
-audioril.lib=libhuawei-audio-ril.so
-gsm.fastdormancy.mode=3
-keyguard.no_require_sim=true
-persist.radio.apm_sim_not_pwdn=1
-ril.hw_modem0.rssi=-1
-ril.hw_modem1.rssi=-1
-ro.config.hw_sim2airplane=true
-ro.dual.sim.phone=false
 ro.telephony.ril_class=HwHisiRIL
+
+
+
+
