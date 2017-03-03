@@ -285,9 +285,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/lib64/libril.so:system/lib64/libril.so \
 	$(LOCAL_PATH)/rootdir/system/lib64/librilutils.so:system/lib64/librilutils.so \
 
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/rootdir/system/isp.bin:system/isp.bin \
-
 # Sensors
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/lib/hw/sensorcaps.default.so:system/lib/hw/sensorcaps.default.so \
