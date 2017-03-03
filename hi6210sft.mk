@@ -256,11 +256,55 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
 	$(LOCAL_PATH)/rootdir/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
 
+# RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+     	audioril.lib=libhuawei-audio-ril.so \
+	gsm.fastdormancy.mode=3 \
+	keyguard.no_require_sim=true \
+	persist.radio.apm_sim_not_pwdn=1 \
+	ril.hw_modem0.rssi=-1 \
+	ril.hw_modem1.rssi=-1 \
+	ro.config.hw_sim2airplane=true \
+	ro.dual.sim.phone=false \
+     	ro.telephony.ril_class=HwHisiRIL
+
+PRODUCT_COPY_FILES += \
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/log,system/etc/log) \
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/manufacture,system/etc/manufacture) \
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/modemConfig,system/etc/modemConfig) \
+	$(LOCAL_PATH)/rootdir/system/etc/factory_modem.cfg:system/etc/factory_modem.cfg \
+	$(LOCAL_PATH)/rootdir/system/etc/kerneldump.sh:system/etc/etc/kerneldump.sh
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/lib/libbalong-ril.so:system/lib/libbalong-ril.so \
+	$(LOCAL_PATH)/rootdir/system/lib/libbalong-ril-1.so:system/lib/libbalong-ril-1.so \
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/lib64/lib_atprotocolsw.so:system/lib64/lib_atprotocolsw.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libbalong-ril.so:system/ib64/libbalong-ril.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libbalong-ril-1.so:system/lib64/libbalong-ril-1.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libconn_factory_test.so:system/lib64/libconn_factory_test.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libhisi_efuse.so:system/lib64/libhisi_efuse.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libHisiEncClientDll.so:system/lib64/libHisiEncClientDll.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libHiSiUEAgent.so:system/lib64/libHiSiUEAgent.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libhsa_common.so:system/lib64/libhsa_common.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libhsa_configprocess.so:system/lib64/libhsa_configprocess.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libhsa_hdlc.so:system/lib64/libhsa_hdlc.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libhsa_msgprocess.so:system/lib64/libhsa_msgprocess.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/liboeminfo.so:system/lib64/liboeminfo.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libreference-ril.so:system/lib64/libreference-ril.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/libril.so:system/lib64/libril.so \
+	$(LOCAL_PATH)/rootdir/system/lib64/librilutils.so:system/lib64/librilutils.so \
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/system/isp.bin:system/isp.bin \
+	$(LOCAL_PATH)/rootdir/system/phone.prop:system/phone.prop \
+
+# Sensors
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/lib/hw/sensorcaps.default.so:system/lib/hw/sensorcaps.default.so \
 	$(LOCAL_PATH)/rootdir/system/lib/hw/sensors.default.so:system/lib/hw/sensors.default.so \
 
-# Sensors
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/lib64/hw/lights.default.so:system/lib64/hw/lights.hi6210sft.so \
 	$(LOCAL_PATH)/rootdir/system/lib64/hw/sensorcaps.default.so:system/lib64/hw/sensorcaps.default.so \

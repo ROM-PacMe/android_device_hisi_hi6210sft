@@ -103,5 +103,10 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TWHAVE_SELINUX := true
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+BOARD_PROVIDES_RILD := true
+BOARD_RIL_CLASS := ../../../device/hisi/hi6210sft/ril
+
 # UserIMAGES
 TARGET_USERIMAGES_USE_EXT4 := true
