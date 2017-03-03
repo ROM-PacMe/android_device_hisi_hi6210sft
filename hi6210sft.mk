@@ -177,6 +177,7 @@ PRODUCT_COPY_FILES += \
 
 # Huawei P8 Lite Components
 PRODUCT_PACKAGES += \
+	libhi6210sft \
 	lights.hi6210sft \
 	sound_trigger.primary.hi6210sft \
 
@@ -251,11 +252,9 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/rootdir/fstab.hi6210sft:root/fstab.hi6210sft \
-	$(LOCAL_PATH)/rootdir/init.connectivity.rc:root/init.connectivity.rc \
-	$(LOCAL_PATH)/rootdir/init.hi6210sft.rc:root/init.hi6210sft.rc \
-	$(LOCAL_PATH)/rootdir/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
-	$(LOCAL_PATH)/rootdir/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
+	$(LOCAL_PATH)/rootdir/sbin/oeminfo_nvm_server:root/sbin/oeminfo_nvm_server \
+	$(LOCAL_PATH)/rootdir/sbin/teecd:root/sbin/teecd \
+	$(LOCAL_PATH)/rootdir/sbin/volisnotd:root/sbin/volisnotd \
 
 # RIL
 PRODUCT_COPY_FILES += \
@@ -288,7 +287,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/isp.bin:system/isp.bin \
-	$(LOCAL_PATH)/rootdir/system/phone.prop:system/phone.prop \
 
 # Sensors
 PRODUCT_COPY_FILES += \
