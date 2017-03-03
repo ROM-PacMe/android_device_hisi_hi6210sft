@@ -86,12 +86,6 @@ PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/bluetooth,system/etc/bluetooth) \
 
 # Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.camera.beauty.algo.doc=1 \
-	ro.hwcamera.previeweffects=true \
-	ro.mmi.support_camera_otp=true \
-	ro.mmi.support_slave_camera_otp=true
-
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/etc/camera_orientation.cfg:system/etc/camera_orientation.cfg \
 	$(LOCAL_PATH)/rootdir/system/etc/camera_resolutions.cfg:system/etc/etc/camera_resolutions.cfg
@@ -113,10 +107,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 # Display
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    	hw.lcd.lcd_density=320 \
-    	ro.sf.lcd_density=320 \
 
 # File System
 PRODUCT_PACKAGES += \
@@ -173,12 +163,6 @@ PRODUCT_PACKAGES += \
 	libion.huawei \
 	libion
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    	debug.hwui.render_dirty_regions=false \
-    	persist.sys.strictmode.disable=1 \
-    	persist.sys.use_dithering=2 \
-    	ro.opengles.version=131072 \
-
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/system/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
 	$(LOCAL_PATH)/rootdir/system/lib/egl/libGLES_mali.so:system/lib/egl/libGLES_mali.so \
@@ -205,10 +189,6 @@ endif
 
 PRODUCT_COPY_FILES += \
     	$(LOCAL_KERNEL):kernel
-
-# Misc
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	qemu.hw.mainkeys=0
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -278,29 +258,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
 
 # RIL
-PRODUCT_PROPERTY_OVERRIDES += \
-     	audioril.lib=libhuawei-audio-ril.so \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	gsm.fastdormancy.mode=3 \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	keyguard.no_require_sim=true \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.radio.apm_sim_not_pwdn=1 \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ril.hw_modem0.rssi=-1 \
-	ril.hw_modem1.rssi=-1 \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.config.hw_sim2airplane=true \
-	ro.dual.sim.phone=false \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-     	ro.telephony.ril_class=HwHisiRIL
-
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/log,system/etc/log) \
 	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/system/etc/manufacture,system/etc/manufacture) \
