@@ -22,7 +22,17 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a7
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := ALE-L21,cherry,cherryk,CherryPlus,chm-u01,CHM-U01,hi6210sft,hwChe2,Che2-L11
+TARGET_OTA_ASSERT_DEVICE := ALE-L21,cherry,cherryk,CherryPlus,chm-u01,CHM-TL00H,CHM-U01,hi6210sft,hwChe2,Che2-L11
+
+# Audio
+BOARD_USES_ALSA_AUDIO := false
+BOARD_USES_GENERIC_AUDIO := true
+
+# Bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := $(LOCAL_PATH)/bluetooth/vnd_hi6210sft.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Board
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -39,6 +49,10 @@ USE_CAMERA_STUB := true
 # Display
 TARGET_USE_PAN_DISPLAY := true
 
+# GPS
+USE_DEVICE_SPECIFIC_GPS := true
+TARGET_NO_RPC := true
+
 # Graphics
 ANDROID_ENABLE_RENDERSCRIPT := true
 BIONIC_TESTS ?= true
@@ -47,10 +61,14 @@ USE_OPENGL_RENDERER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x07478000
-BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=disabled
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 --tags_offset 0x02988000
 
 TARGET_PREBUILT_KERNEL := device/hisi/hi6210sft/Image
+
+# NFC
+BOARD_NFC_CHIPSET := pn547
+BOARD_NFC_DEVICE := "/dev/pn544"
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
@@ -67,8 +85,8 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := squashfs
 endif
 endif
 
-# Ramdisk
-TARGET_PROVIDES_INIT_RC := true
+# Properties
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # Recovery
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -76,7 +94,7 @@ RECOVERY_SDCARD_ON_DATA := true
 
 # Recovery TWRP
 RECOVERY_VARIANT := twrp
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi6210sft
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/balong_fb.1/leds/lcd_backlight0/brightness"
 TW_CUSTOM_BATTERY_PATH := "/sys/devices/battery.0/power_supply/Battery"
 TW_EXCLUDE_SUPERSU := true
@@ -88,5 +106,16 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TWHAVE_SELINUX := true
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+BOARD_PROVIDES_RILD := true
+BOARD_RIL_CLASS := ../../../device/hisi/hi6210sft/ril
+
 # UserIMAGES
 TARGET_USERIMAGES_USE_EXT4 := true
+
+# Wifi
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+CONFIG_DRIVER_NL80211 := y
+WPA_SUPPLICANT_VERSION := VER_0_8_X
